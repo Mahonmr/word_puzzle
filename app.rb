@@ -1,9 +1,8 @@
 require('sinatra')
 require('sinatra/reloader')
 require('./lib/word_puzzle')
-require('pry')
-require('pry')
 also_reload('lib/**/*.rb')
+enable :sessions
 
 get('/') do
   erb(:index)
@@ -13,6 +12,6 @@ get('/show_puzzle') do
   if @puzzle = params.fetch('phrase_to_puzzle').strip_vowel_replace_with_dash()
     erb(:show_puzzle)
   else
-    erb(:index)
+    redirect ('/')
   end
 end
