@@ -64,4 +64,9 @@ describe('presentaion of resulting string') do
   it 'will return error message of blank' do
     expect(''.word_puzzle()).to(eq(nil))
   end
+
+  it 'will return error message of blank' do
+    expect('Believe you can and you\'re halfway there. Theodore Roosevelt'.word_puzzle()).\
+    to(eq('B-l--v- y-- c-n -nd y--\'r- h-lfw-y th-r-. Th--d-r- R--s-v-lt'))
+  end
 end
