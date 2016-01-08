@@ -51,4 +51,17 @@ describe('presentaion of resulting string') do
   it 'will replace vowels with a dash within a sting of non alphabet characters' do
     expect('#$%AaaeeeuI^%@!'.word_puzzle()).to(eq('#$%--------^%@!'))
   end
+
+  it 'will remove leading and trailing white spaces' do
+    expect('   good dog good cat    '.word_puzzle()).to(eq('g--d d-g g--d c-t'))
+    expect('   good     '.word_puzzle()).to(eq('g--d'))
+  end
+
+  it 'will remove extra white spaces inbetween words' do
+    expect('   good dog   good   cat    '.word_puzzle()).to(eq('g--d d-g g--d c-t'))
+  end
+
+  it 'will return error message of blank' do
+    expect(''.word_puzzle()).to(eq(nil))
+  end
 end

@@ -1,6 +1,6 @@
 class String
 
   def word_puzzle
-    self.gsub(/[aAeEiIoOuU]/, '-')
+    self.strip.squeeze(" ").gsub(/[aAeEiIoOuU]/, '-') unless self.empty?
   end
 end
