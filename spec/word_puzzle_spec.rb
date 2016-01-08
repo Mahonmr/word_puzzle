@@ -30,3 +30,9 @@ describe('Replace vowels with the dash symbol') do
     expect('good'.word_puzzle()).to(eq('g--d'))
   end
 end
+
+describe('presentaion of resulting string') do
+  it 'will not downcase consonants' do
+    expect('We the PEoplE'.word_puzzle()).to(eq('W- th- P--pl-'))
+  end
+end
