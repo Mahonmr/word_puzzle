@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/reloader')
 require('./lib/word_puzzle')
 require('pry')
+require('pry')
 also_reload('lib/**/*.rb')
 
 get('/') do
@@ -9,6 +10,9 @@ get('/') do
 end
 
 get('/show_puzzle') do
-#   @change_words_string = params.fetch('coin_combo').to_i.coin_slide()
-  erb(:index)
+  if @puzzle = params.fetch('phrase_to_puzzle').strip_vowel_replace_with_dash()
+    erb(:show_puzzle)
+  else
+    erb(:index)
+  end
 end
