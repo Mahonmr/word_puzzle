@@ -62,7 +62,7 @@ describe('presentaion of resulting string') do
   end
 
   it('will return error message of blank') do
-    expect(''.strip_vowel_replace_with_dash()).to(eq(''))
+    expect(''.strip_vowel_replace_with_dash()).to(eq(nil))
   end
 
   it('will return error message of blank') do
