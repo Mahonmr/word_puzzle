@@ -35,4 +35,20 @@ describe('presentaion of resulting string') do
   it 'will not downcase consonants' do
     expect('We the PEoplE'.word_puzzle()).to(eq('W- th- P--pl-'))
   end
+
+  it 'will not crash if a sting of numbers are entered' do
+    expect('123456789'.word_puzzle()).to(eq('123456789'))
+  end
+
+  it 'will replace vowels with a dash within a sting of numbers' do
+    expect('1234aeIoU6789'.word_puzzle()).to(eq('1234-----6789'))
+  end
+
+  it 'will not crash if a sting of non alphabet characters are entered' do
+    expect('#$%^%@!'.word_puzzle()).to(eq('#$%^%@!'))
+  end
+
+  it 'will replace vowels with a dash within a sting of non alphabet characters' do
+    expect('#$%AaaeeeuI^%@!'.word_puzzle()).to(eq('#$%--------^%@!'))
+  end
 end
