@@ -2,7 +2,6 @@ require('sinatra')
 require('sinatra/reloader')
 require('./lib/word_puzzle')
 also_reload('lib/**/*.rb')
-enable :sessions
 
 get('/') do
   erb(:index)
